@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Service.css';
 
 const Service = ({ service }) => {
     // const { service } = props;
-    const { name, price, description, img } = service;
+    const { id, name, price, description, img } = service;
     return (
         <div className="service">
             <img src={img} alt="" />
@@ -11,6 +12,9 @@ const Service = ({ service }) => {
                 <h3>{name}</h3>
                 <h5>Price: {price}</h5>
                 <p>{description}</p>
+                <Link to={`/booking/${id}`}>
+                    <button className="btn btn-warning my-4">Book {name.toLowerCase()}</button>
+                </Link>
             </div>
         </div>
     );
