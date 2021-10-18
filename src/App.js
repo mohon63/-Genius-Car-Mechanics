@@ -3,7 +3,8 @@ import './App.css';
 import AuthProvider from './contexts/AuthProvider';
 import Booking from './Pages/Booking/Booking/Booking';
 import Home from './Pages/Home/Home/Home';
-import Login from './Pages/Login/Firebase/Login/Login';
+import Login from './Pages/Login/Login/Login';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import NotFound from './Pages/NotFound/NotFound';
 import Header from './Pages/Shared/Header/Header';
 
@@ -23,9 +24,9 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-            <Route path="/booking/:serviceId">
+            <PrivateRoute path="/booking/:serviceId">
               <Booking></Booking>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
